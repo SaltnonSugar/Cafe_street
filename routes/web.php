@@ -17,7 +17,8 @@ use App\Http\Controllers\Admin\AdminController;
 Route::get('/',[\App\Http\Controllers\ViewProduct::class,'ShowProduct']);
 
 // Route login + register
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/login',[AdminController::class,'ShowProductAdmin'])->middleware('auth')->middleware('checkloginadmin');
 Auth::routes();
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::middleware(['auth','checkloginadmin'])->group(function (){
+    Route::get('/products',[AdminController::class,'ShowProductAdmin']);
+});

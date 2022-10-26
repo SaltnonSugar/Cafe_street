@@ -15,6 +15,6 @@ class AdminController extends Controller
         $products= DB::table('product')->select('*');
 
         $products = $products->get();
-        return view('admin.index',compact('products'));
+        return view('admin.products_admin.products',compact('products'));
     }
 }

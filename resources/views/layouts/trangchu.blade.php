@@ -26,7 +26,7 @@
         {{--     menu --}}
         <div class="menu">
             <a href="">Home page</a>
-            <a href="">Products</a>
+            <a href="#menu">Products</a>
             <a href="">Feedback</a>
         </div>
         {{--     search + cart --}}
@@ -160,7 +160,7 @@
         </div>
     </div>
     {{--     Special menu for you --}}
-    <h2 class="font-semibold text-2xl pl-16 mb-4">Special menu for you</h2>
+    <h2 class="font-semibold text-2xl pl-16 mb-4" id="menu">Special menu for you</h2>
     <div class="flex flex-row flex-wrap gap-6 justify-center">
         @foreach($products as $row)
             <div class="card rounded-lg bg-white w-fit drop-shadow-2xl p-4 pb-6 outline outline-4 outline-yellow-100">
